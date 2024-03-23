@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    src: url('../Fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+  }
+
+  @font-face {
+    font-family: 'PlayFair';
+    src: url('../Fonts/PlayFair/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../Fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+  }
+
+  body{
+    background-color: #dfd9ec;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  
+  h1{
+    font-family:"Roboto", sans-serif;
+    color: violet;
+  }
+
+
+  h6 , h3{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 2.5;
+    color: #f8f8f8;
+  }
+   
+  i {
+    font-size: 20px;
+    color: #aeb0bc;
+  }
+  
+ 
+
+  .card{
+    width: 500px;
+  }
+
+  Button:last-child{
+    background-color: #712cf9 !important;
+    color: white;
+  }
+
+
+.login-page,
+.assign-page {
+  position: relative;
+}
+
+.login-form,
+.assign-form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home-container{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    
+}
+.home-content{
+    background-color: #6e2bf4;
+    color: #e1d3fe;
+    height: 100vh;
+}
+
+.home-button{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #212529;
+    color: #dee0e7;
+}
+
+.create-form{
+    color: #212529;
+    background-color: #dee0e7;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+.table-image{
+  width: 100px;
+}
+
+.navbar{
+  background-color: #6e2cf2;
+  color: white;
+  font-family:"Raleway",sans-serif;
+  font-weight: bold;
+}
+
+
+
+.navbar-brand{
+  color: #dee0e7 !important;
+  font-family: "Poppins",sans-serif;
+  font-weight: 600;
+  font-size: 18px !important;
+}
+
+
+@media (max-width: 768px) {
+
+  table{
+    overflow: hidden;
+    overflow-y:scroll;
+    overflow-x: scroll;
+    display: block;
+ }
+
+
+    .home-button{
+        display: grid;
+        place-items: center;
+    }
+
+    .blogs-wrapper{
+      width: 100%;
+    }
+}
