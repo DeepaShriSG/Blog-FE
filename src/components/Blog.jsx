@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import BlogTile from '../common/BlogTile';
+import Card from "../common/Card"
 import { useParams } from 'react-router-dom'
 import useLogout from '../common/uselogout'
 import {toast} from 'react-toastify'
@@ -27,7 +27,7 @@ function Blog() {
 function AdminBlog(){
 
   let params = useParams()
-  let [blog,setBlog] = useState({})
+  let [blogs,setBlogs] = useState({})
 
   let navigate = useNavigate();
 
@@ -38,7 +38,7 @@ function AdminBlog(){
       let res = await AxiosService.get(`/blogs/${params.id}`)
       if(res.status===200)
       {
-          setBlog(res.data.blog)
+          setBlogs(res.data.blog)
       }
     } catch (error) {
       toast.error(error.response.data.message)
@@ -89,15 +89,15 @@ function AdminBlog(){
     <div className='blogs-wrapper'><BlogTile blog={blog}/></div>
     <div style={{textAlign:"center"}}>
      {
-      blog.status!=='pending'?<Button variant='warning' onClick={()=>changeStatus("pending")}>Pending</Button>:<></>
+      blogs.status!=='pending'?<Button variant='warning' onClick={()=>changeStatus("pending")}>Pending</Button>:<></>
      }
      &nbsp;
      {
-        blog.status!=='approved'?<Button variant='success' onClick={()=>changeStatus("approved")}>Approve</Button>:<></>
+        blogs.status!=='approved'?<Button variant='success' onClick={()=>changeStatus("approved")}>Approve</Button>:<></>
      }
      &nbsp;
      {
-          blog.status !== 'rejected' &&
+          blogs.status !== 'rejected' &&
           <Button variant='danger' onClick={() => {
             let reason = prompt("Please provide a reason for rejection:");
             if (reason !== null) {
@@ -116,7 +116,7 @@ function EditBlog(){
     let [title,setTitle] = useState("")
     let [imageUrl,setImage] = useState("")
     let [description,setDescription] = useState("")
-    let [blog,setBlog] = useState({})
+    let [blogs,setBlogs] = useState({})
     let navigate = useNavigate()
     let logout = useLogout()
     let getBlog = async()=>{
@@ -124,10 +124,10 @@ function EditBlog(){
         let res = await AxiosService.get(`/blogs/${params.id}`)
         if(res.status===200)
         {
-            setTitle(res.data.blog.title)
-            setImage(res.data.blog.imageUrl)
-            setDescription(res.data.blog.description)
-            setBlog(res.data.blog)
+            setTitle(res.data.blogs.title)
+            setImage(res.data.blogs.imageUrl)
+            setDescription(res.data.blogs.description)
+            setBlogs(res.data.blogs)
         }
       } catch (error) {
         toast.error(error.response.data.message)
@@ -187,7 +187,7 @@ function EditBlog(){
   
           <h2 style={{textAlign:"center"}}>Preview</h2>
           <div className='blogs-wrapper'>
-            <BlogTile blog={{title,imageUrl,description}}/>
+            <Card blogs={blogs}/>
           </div>
         <div style={{textAlign:"center"}}>
           <Button variant="primary" onClick={()=>editblog()}>

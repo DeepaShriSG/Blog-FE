@@ -51,7 +51,7 @@ function Dashboard() {
           blogs.map((e,i)=>{
             return <tr key={e._id} onClick={()=>navigate(`/blog/${e._id}`)} className='cursor-pointer'>
               <td>{i+1}</td>
-              <td>{e.title}</td>
+              <td><strong>{e.title}</strong></td>
               <td><img src={e.imageUrl} className='table-image'/></td>
               <td>{e.createdAt}</td>
               <td>{ e.status}</td>  

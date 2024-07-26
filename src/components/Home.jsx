@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AxiosService from "../utils/ApiService";
+import Card from "../common/Card"
 import uselogout from "../common/uselogout";
-import BlogTile from "../common/BlogTile";
 import { toast } from "react-toastify";
 
 function Home() {
@@ -27,21 +27,17 @@ function Home() {
     getBlogs();
   }, []);
 
+  console.log(blogs)
+
   return (
     <>
       <div className="container-fluid">
         <div className="blogs-wrapper d-grid gap-2 m-lg-3 m-md-3">
-          {blogs.map((e) => {
-            return <BlogTile blog={e} key={e._id} />;
-          })}
+         <Card blogs={blogs}/>
         </div>
-      </div> 
+      </div>
     </>
   );
 }
 
 export default Home;
-
-
-   
-

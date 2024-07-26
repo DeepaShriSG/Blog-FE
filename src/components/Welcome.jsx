@@ -30,12 +30,10 @@ function Welcome() {
         <div className="d-none d-lg-block d-md-block col-lg-7 col-md-7 col-12 p-0 home-content">
          <h6 className="p-2 m-3" style={{color:"voilet",fontWeight:"600"}}>Dhe Blogs</h6>
          <div className="container my-lg-4 my-md-3 p-lg-4 p-md-3">
-      
-         <h3 className=" welcome-content"> Whether you're here to &nbsp;
-         <span ref={ref} style={{color:"black" , display: "inline-block"}} ></span>&nbsp;
+         <h3 className="welcome-content m-5 p-5"> Whether you're here to &nbsp;
+         <span className="p-2" ref={ref} style={{color:"black" , display: "inline-block"}} ></span>&nbsp;
           we're thrilled to have you as part of our community.  </h3>  
          </div>
-        
         
         </div>
 
